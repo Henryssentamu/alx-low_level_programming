@@ -12,11 +12,10 @@ int main(void)
 		putchar(i);
 	}
 
-	putchar('\n');
-
 	for (k = 65; k < 91; k++)
 	{
 		putchar(k);
 	}
+	putchar('\n');
 	return (0);
 }
