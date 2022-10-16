@@ -6,17 +6,13 @@
 
 int main(void)
 {
-	int i;
 
 	int j;
 
-	i = 0;
 
 	for (j = 0; j < 10; j++)
 	{
-		int putchar(i, '0');
-
-		i++;
+		int putchar((j % 10) + '0');
 	}
 	putchar('\n');
 
