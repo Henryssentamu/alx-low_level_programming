@@ -12,6 +12,10 @@ int print_last_digit(int a)
 	{
 		a = -a;
 	}
+	else
+	{
+		a = a;
+	}
 
 	c = a % 10;
 
