@@ -25,4 +25,10 @@ int main(void)
 		{
 			printf("Buzz");
 
-			printf("  
+			printf("  ");
+		}
+	}
+	printf("\n");
+
+	return (0);
+}
