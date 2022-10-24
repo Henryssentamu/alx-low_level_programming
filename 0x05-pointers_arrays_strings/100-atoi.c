@@ -6,24 +6,26 @@
  */
 int _atoi(char *s)
 {
-	int sign = 1;
+	int a, b, n, m;
 
-	unsigned int num = 0;
+	a = n = 0;
 
-	while (*s)
+	m = 1;
+
+	while ((*(s + a) < '0' || *(s + a) > '9') && (*(s + a) != '\0'))
 	{
-		if (*s == '-')
+		if (*(s + a) == '-')
 		{
-			sign *= -1;
+			m *= -1;
 		}
-		else if (*s >= '0' && *s <= '9')
-		{
-			num = (num * 10) + (*s - '0');
-		}
-		else if (num > 0)
-		{
-			break;
-		}
-		return (num * sign);
+		a++;
 	}
+	b = a;
+
+	while ((*(s + b) >= '0') && (*(s + b) <= '9'))
+	{
+		n = n * 10 + m * (*(s + b) - '0');
+		b++;
+	}
+	return (n);
 }
