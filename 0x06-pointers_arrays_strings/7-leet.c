@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * conv ->  encodes a string
+ * leet ->  encodes a string
  * @n:pointer
  * Return: n
  */
-char *conv(char *n)
+char *leet(char *)
 {
 	int i, j;
 
