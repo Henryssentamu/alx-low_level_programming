@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, mult = 1;
+	int i, mult;
 
 	if (argc == 1 || argc == 2)
 	{
@@ -18,9 +18,11 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
+		mult = 1;
+
 		for (i = 1; i < 3; i++)
 			mult *= atoi(argv[i]);
-		printf("%d", mult);
+		printf("%d\n", mult);
 	}
 	return (0);
 }
