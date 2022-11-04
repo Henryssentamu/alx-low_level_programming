@@ -8,9 +8,7 @@
  */
 int main(int argc, char * argv[])
 {
-	int i;
-	
-	for (i = 0; i < argc; i++)
-		printf("number of argument = %d", i);
+	printf("number of arguments = %d\n", argc);
+
 	return (0);
 }
