@@ -10,22 +10,30 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i, j, length, sum;
 
-	if (argc <= 1)
-	{
+	char *ptr;
+
+	if (argc < 2)
 		printf("0\n");
-	}
-	for (i = 0; i < argc; i++)
+	else
 	{
-		if (isdigit(argv[i] == 0)
+		sum = 0;
+		for (i = 1; i < argc; i++)
 		{
-			printf("Error\n");
-
-			return (1);
+			ptr = argv[i];
+			length = strlen(ptr);
+			for (j = 0; j < length; j++)
+			{
+				if (isdigit(*(ptr + j)) == 0)
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
+			sum += atoi(argv[i]);
 		}
-		sum += atoi(argv[i]);
+		printf("%d\n", sum);
 	}
-	printf("sum = %d\n", sum);
 	return (0);
 }
