@@ -1,22 +1,19 @@
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef DOG_H
+#define DOG_H
 /**
  * struct dog - data type
  * @name: string
  * @age: float
- * owner:string
- * main -> returns int & no arg
- * Reurn : integer
+ * @owner:string
  */
-int main(void)
+struct dog
 {
-	struct dog
-	{
-		char *name;
+	char *name;
 
-		float age;
+	float *age;
 
-		char *owner;
-	};
-	return (0);
-}
+	char *owner;
+};
+void init_dog(struct dog *d, char *name, float age, char *owner);
+
+#endif
