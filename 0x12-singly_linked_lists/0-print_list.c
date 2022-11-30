@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stddef.h>
+#include <stdlib.h>
 #include <stdio.h>
 /**
  * print_list - structure
@@ -10,15 +10,14 @@ size_t print_list(const list_t *h)
 {
 	size_t nodes = 0;
 
-	while (h)
+	while (h != NULL)
 	{
 		if (h->str == NULL)
-			printf("[0] (nil)\n");
+			printf( "[%d],%s\n", 0, "(nil)");
 		else
-			printf("[%d] %s\n", h->len, h->str);
-		nodes++;
+			printf("[%d] %s", h->len, h->str);
 		h = h->next;
+		nodes++;
 	}
 	return (nodes);
 }
-
