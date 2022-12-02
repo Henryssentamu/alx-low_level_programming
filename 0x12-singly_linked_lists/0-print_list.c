@@ -14,14 +14,15 @@ size_t print_list(const list_t *h)
 
 	size_t i = 0;
 
-	newh = malloc(sizeof(list_t));
 	h = newh;
 	if (newh->str == NULL)
 		printf("[%d] %s", 0, "(nil)");
-	while (newh->next != 0)
+	while (newh != NULL)
 	{
-		printf("%s %d", newh->str, newh->len);
+		printf("%s %d  %d", newh->str, newh->len, i);
+
+		newh = newh->next;
 		i++;
 	}
-	return (i);
+
 }
