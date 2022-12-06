@@ -1,5 +1,24 @@
 #include "main.h"
 /**
+ * error_file -> checks if the file can be checked
+ * @file_from: file from
+ * @file_to: file to
+ * @argv: argument
+ */
+void error_file(int file_from, int file_to, char *argv[])
+{
+	if (file_from == -1)
+	{
+		dprintf(STDERR_FILENO, "Erorr: cant read from file, %s\n", argv[1]);
+		exit(98);
+	}
+	if (file_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Erorr: cant write to, %s\n", argv[2]);
+		exit(99);
+	}
+}
+/**
  * main - program that copies the content of a file to another file
  * @argc: num argument
  * @argv: string argument
@@ -22,7 +41,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR
-				| S_IRGRP | S_IWGRP | S_IROTH);
+							| S_IRGRP | S_IWGRP | S_IROTH);
 	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
