@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * create_file - function that creates a file.
  * @filename: variable pointer
