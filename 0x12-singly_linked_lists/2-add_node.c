@@ -3,25 +3,28 @@
  * add_node -> add a node at the begining
  * @head: new node
  * @str: string
- * Return: the address of the new elemen
+ * Return: the address of the new element
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	size_t i;
-
 	list_t *new;
+	char *dup;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
-		return (NULL);
-	new->str = strdup(str);
-	for (i = 0; str[i]; i++)
+	if (head == NULL)
 	{
-		new->len = i;
-		new->next = *head;
-		*head = new;
+		return (0);
+		exit(1);
 	}
-	return (*head);
+	else
+	{
+		new = malloc(sizeof(list_t));
+		while (new != NULL)
+		{
+			dup = strdup(str);
+			new->str = dup;
+			new->next =*head;
+			*head = new;
+		}
+	}
+	return (new);
 }
-
-

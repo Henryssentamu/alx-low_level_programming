@@ -8,17 +8,20 @@
  */
 size_t list_len(const list_t *h)
 {
-	size_t i = 0;
-
-	list_t *newh;
-
-	newh = malloc(sizeof(list_t));
-	h = newh;
+	size_t i = 1;
 	
-	while (h != NULL)
+	if (h == NULL)
 	{
-		newh = newh->next;
-		i++;
+		return (-1);
+		exit(1);
+	}
+	else
+	{
+		while (h->next != NULL)
+		{
+			h = h->next;
+			i++;
+		}
 	}
 	return (i);
 }
